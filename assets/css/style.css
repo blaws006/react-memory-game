@@ -10,10 +10,17 @@ body {
   flex-direction: column;
 }
 
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.active {
+  color: #527957;
+}
 
 nav {
    background: linear-gradient(#527957, #1F2D21);
-    color: #ffffff;
 }
 
 
@@ -38,6 +45,10 @@ main {
   flex: 1 0 auto;
 }
 
+.picture-row {
+  margin: 20px 0;
+}
+
 footer {
   flex-shrink: 0;
   background: linear-gradient(#1F2D21, #527957);
@@ -48,4 +59,5 @@ footer p {
   vertical-align: bottom;
   color: #ffffff;
   text-align: center;
+  margin-top: 25px;
 }
