@@ -7,6 +7,7 @@ function Header() {
         <a href="#" className="brand-logo">Memory Game</a>
       </div>
     </nav>
+    
   )
 }
 
