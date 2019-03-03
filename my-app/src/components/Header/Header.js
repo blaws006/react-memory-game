@@ -4,7 +4,7 @@ function Header() {
   return(
     <nav>
       <div className="nav-wrapper light-blue darken-3">
-        <a href="#" className="brand-logo">Memory Game</a>
+        <a href="/" className="brand-logo">Memory Game</a>
       </div>
     </nav>
     
