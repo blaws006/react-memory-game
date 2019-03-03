@@ -1,0 +1,9 @@
+.content {
+  min-height: calc(100vh - 70px);
+}
+.footer {
+  height: 255px;
+}
+.footer-copyright {
+  margin-top: 130px;
+}
