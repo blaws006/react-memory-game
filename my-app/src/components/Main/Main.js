@@ -13,6 +13,8 @@ import ryu from "../img/Ryu_TvC.png";
 import sonic from "../img/sonic.jpg";
 
 // Create a list
+// Shuffle the list
+// Make images shuffle onClick
 
 class Main extends React.Component {
   constructor(props) {
@@ -32,21 +34,28 @@ class Main extends React.Component {
         drake,
         ryu,
         sonic
-      ]
+      ],
+      clickedList: []
     };
   }
-  shuffleArray = () => {
-    var list = this.state.list;
-    for (var i = list.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = list[i];
-      list[i] = list[j];
-      list[j] = temp;
+
+  shuffleArray = (props) => {
+    if (!this.state.clickedList.includes(props.target.src)) {
+      var list = this.state.list;
+      for (var i = list.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = list[i];
+        list[i] = list[j];
+        list[j] = temp;
+      }
+      this.setState(state => ({
+        list: state.list,
+      }));
+    this.state.clickedList.push(props.target.src);
+      console.log(this.state);
+    } else {
+      alert('You lost')
     }
-    this.setState(state => ({
-      list: state.list
-    }))
-    console.log(list)
   };
 
   handleClick = () => {
