@@ -40,7 +40,9 @@ class Main extends React.Component {
   }
 
   shuffleArray = (props) => {
-    if (!this.state.clickedList.includes(props.target.src)) {
+    const clickedList = this.state.clickedList;
+    const clickedImg = props.target.src;
+    if (!clickedList.includes(clickedImg)) {
       var list = this.state.list;
       for (var i = list.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -51,18 +53,10 @@ class Main extends React.Component {
       this.setState(state => ({
         list: state.list,
       }));
-    this.state.clickedList.push(props.target.src);
-      console.log(this.state);
+      clickedList.push(clickedImg);
     } else {
       alert('You lost')
     }
-  };
-
-  handleClick = () => {
-    console.log("Click");
-    this.setState({
-      isClicked: true
-    });
   };
 
   render() {
