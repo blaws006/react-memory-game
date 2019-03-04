@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "../Image/Image";
 import cloud from "../img/220px-Cloud_Strife.png";
 import lara from "../img/220px-Lara_Croft_(2013).png";
 import dk from "../img/250px-SuperMarioParty_DonkeyKong.png";
@@ -13,58 +12,68 @@ import drake from "../img/NathanDrake-U4.jpg";
 import ryu from "../img/Ryu_TvC.png";
 import sonic from "../img/sonic.jpg";
 
-// Create image tags
+// Create img tags
 //
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = [];
+    this.state = {isClicked: false};
   }
+
+  
+  handleClick = () =>  {
+    console.log('Click');
+    this.setState({
+      isClicked: true
+    })
+    console.log(this.props)
+  }
+
   render() {
     return (
       <div className="container content">
         <div className="row">
           <div className="col s12 m3 l3 center">
-            <Image image={cloud} name={cloud} />
+            <img src={cloud} alt={cloud} onClick={this.handleClick} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={lara} name={lara} />
+            <img src={lara} alt={lara} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={dk} name={dk} />
+            <img src={dk} alt={dk} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={aloy} name={aloy} />
+            <img src={aloy} alt={aloy} />
           </div>
         </div>
         <div className="row">
           <div className="col s12 m3 l3 center">
-            <Image image={mario} name={mario} />
+            <img src={mario} alt={mario} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={dante} name={dante} />
+            <img src={dante} alt={dante} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={kratos} name={kratos} />
+            <img src={kratos} alt={kratos} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={link} name={link} />
+            <img src={link} alt={link} />
           </div>
         </div>
 
         <div className="row">
           <div className="col s12 m3 l3 center">
-            <Image image={samus} name={samus} />
+            <img src={samus} alt={samus} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={drake} name={drake} />
+            <img src={drake} alt={drake} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={ryu} name={ryu} />
+            <img src={ryu} alt={ryu} />
           </div>
           <div className="col s12 m3 l3 center">
-            <Image image={sonic} name={sonic} />
+            <img src={sonic} alt={sonic} />
           </div>
         </div>
       </div>
