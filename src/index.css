@@ -1,5 +1,8 @@
 nav {
   height: 100%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 .logo {
