@@ -20,7 +20,10 @@ li {
   height: 150px;
 }
 
-
+img {
+  border-radius: 10%;
+  border: 5px solid black;
+}
 
 .banner {
   background-image: url("./components/img/controller-game-hands-807330.jpg");

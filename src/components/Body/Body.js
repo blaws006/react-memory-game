@@ -80,6 +80,7 @@ class Body extends React.Component {
     this.setState({
       clickedList: []
     });
+    this.imageShuffle();
   }
 
   imageShuffle = () => {
@@ -116,7 +117,7 @@ class Body extends React.Component {
         <Banner />
         <div className="container content">
           <div className="row">
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[0]}
                 alt={this.state.list[0]}
@@ -124,7 +125,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[1]}
                 alt={lara}
@@ -132,7 +133,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[2]}
                 alt={dk}
@@ -140,7 +141,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[3]}
                 alt={aloy}
@@ -150,7 +151,7 @@ class Body extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[4]}
                 alt={mario}
@@ -158,7 +159,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[5]}
                 alt={dante}
@@ -166,7 +167,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[6]}
                 alt={kratos}
@@ -174,7 +175,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[7]}
                 alt={link}
@@ -185,7 +186,7 @@ class Body extends React.Component {
           </div>
 
           <div className="row">
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[8]}
                 alt={samus}
@@ -193,7 +194,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[9]}
                 alt={drake}
@@ -201,7 +202,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[10]}
                 alt={ryu}
@@ -209,7 +210,7 @@ class Body extends React.Component {
                 onClick={this.gameController}
               />
             </div>
-            <div className="col s3 m3 l3 center">
+            <div className="col s6 m3 l3 center">
               <img
                 src={this.state.list[11]}
                 alt={sonic}
