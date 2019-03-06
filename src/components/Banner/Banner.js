@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function Banner() {
   return (
     <div className="row">
@@ -9,7 +8,7 @@ function Banner() {
           Welcome to the Memory Game
         </h1>
         <h2 className="center-align white-text">
-          Can you make it to the end???
+          Can you get the high score???
         </h2>
       </div>
     </div>

@@ -13,6 +13,7 @@ import ryu from "../img/Ryu_TvC.png";
 import sonic from "../img/sonic.jpg";
 import Header from "../Header/Header";
 import Banner from "../Banner/Banner";
+import Image from '../Image/Image'
 import Footer from "../Footer/Footer";
 
 // Create a list
@@ -22,31 +23,35 @@ import Footer from "../Footer/Footer";
 class Body extends React.Component {
   constructor(props) {
     super(props);
+    this.gameController = this.gameController.bind(this)
     this.state = {
       list: [
-        cloud,
-        lara,
-        dk,
-        aloy,
-        mario,
-        dante,
-        kratos,
-        link,
-        samus,
-        drake,
-        ryu,
-        sonic
+        { name: "Cloud Strife", url: cloud },
+        { name: "Lara Croft", url: lara },
+        { name: "Donkey Kong", url: dk },
+        { name: "Aloy", url: aloy },
+        { name: "Mario", url: mario },
+        { name: "Dante", url: dante },
+        { name: "Kratos", url: kratos },
+        { name: "Link", url: link },
+        { name: "Samus Aran", url: samus },
+        { name: "Nathan Drake", url: drake },
+        { name: "Ryu", url: ryu },
+        { name: "Sonic the Hedgehog", url: sonic }
       ],
       clickedList: [],
       currentScore: 0,
-      topScore: 0
+      topScore: 0,
+      
     };
   }
 
+  // Body's images shuffle around once the component mounts
   componentDidMount() {
     this.imageShuffle();
   }
 
+  // Every time the Body component updates, it checks if you gain the high score
   componentDidUpdate() {
     if (this.state.currentScore === 12) {
       alert("You win");
@@ -55,13 +60,14 @@ class Body extends React.Component {
     }
   }
 
+  // Update's the progress of game if user has guessed correctly
   updateCurrentScore() {
     this.setState(state => {
       state.currentScore++;
-      console.log(state.currentScore);
     });
   }
 
+  // Once the game's over, this function checks to see if you topped the previous high score
   updateTopScore() {
     if (
       this.state.topScore === 0 ||
@@ -73,6 +79,7 @@ class Body extends React.Component {
     }
   }
 
+  // This function resets the Game settings if the game ends
   reset() {
     this.setState({
       currentScore: 0
@@ -83,6 +90,7 @@ class Body extends React.Component {
     this.imageShuffle();
   }
 
+  // Shuffles the images in the array which does the same on screen.
   imageShuffle = () => {
     var list = this.state.list;
     for (var i = list.length - 1; i > 0; i--) {
@@ -96,6 +104,7 @@ class Body extends React.Component {
     }));
   };
 
+  // Controlls the win loss logic and pushes correctly guessed images to evaluate against
   gameController = props => {
     const clickedList = this.state.clickedList;
     const clickedImg = props.target.src;
@@ -111,113 +120,27 @@ class Body extends React.Component {
   };
 
   render() {
+    // Made three rows worth of images .slice takes 4 images out of the array .map lays out the 4 picked
+    const rowOne = this.state.list.slice(0, 4).map(image =>
+      <Image key={image.name} name={image.name} url={image.url} alt={image.name} title={image.name} gameController={this.gameController} /> 
+      )
+    const rowTwo = this.state.list.slice(4, 8).map(image =>
+      <Image key={image.name} name={image.name} url={image.url} alt={image.name} title={image.name} gameController={this.gameController} /> 
+    )
+    const rowThree = this.state.list.slice(8, 12).map(image =>
+      <Image key={image.name} name={image.name} url={image.url} alt={image.name} title={image.name} gameController={this.gameController} /> 
+    )
     return (
       <div className="page-wrapper">
         <Header current={this.state.currentScore} high={this.state.topScore} />
         <Banner />
         <div className="container content">
+          <div className="row">{rowOne}</div>
           <div className="row">
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[0]}
-                alt={this.state.list[0]}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[1]}
-                alt={lara}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[2]}
-                alt={dk}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[3]}
-                alt={aloy}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
+            {rowTwo}
           </div>
           <div className="row">
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[4]}
-                alt={mario}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[5]}
-                alt={dante}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[6]}
-                alt={kratos}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[7]}
-                alt={link}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[8]}
-                alt={samus}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[9]}
-                alt={drake}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[10]}
-                alt={ryu}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
-            <div className="col s6 m3 l3 center">
-              <img
-                src={this.state.list[11]}
-                alt={sonic}
-                className="responsive-img"
-                onClick={this.gameController}
-              />
-            </div>
+            {rowThree}
           </div>
         </div>
         <Footer />
