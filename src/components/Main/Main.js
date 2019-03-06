@@ -39,25 +39,38 @@ class Main extends React.Component {
     };
   }
 
-  shuffleArray = (props) => {
+  componentDidMount() {
+    this.imageShuffle();
+  }
+
+  gameController = (props) => {
     const clickedList = this.state.clickedList;
     const clickedImg = props.target.src;
     if (!clickedList.includes(clickedImg)) {
-      var list = this.state.list;
-      for (var i = list.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = list[i];
-        list[i] = list[j];
-        list[j] = temp;
-      }
-      this.setState(state => ({
-        list: state.list,
-      }));
+      this.imageShuffle();
+      
       clickedList.push(clickedImg);
     } else {
       alert('You lost')
     }
   };
+
+  componentDidUpdate() {
+    
+  }
+
+  imageShuffle = () => {
+    var list = this.state.list;
+    for (var i = list.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = list[i];
+      list[i] = list[j];
+      list[j] = temp;
+    }
+    this.setState(state => ({
+      list: state.list,
+    }));
+  }
 
   render() {
     return (
@@ -68,7 +81,7 @@ class Main extends React.Component {
               src={this.state.list[0]}
               alt={this.state.list[0]}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -76,7 +89,7 @@ class Main extends React.Component {
               src={this.state.list[1]}
               alt={lara}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -84,7 +97,7 @@ class Main extends React.Component {
               src={this.state.list[2]}
               alt={dk}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -92,7 +105,7 @@ class Main extends React.Component {
               src={this.state.list[3]}
               alt={aloy}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
         </div>
@@ -102,7 +115,7 @@ class Main extends React.Component {
               src={this.state.list[4]}
               alt={mario}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -110,7 +123,7 @@ class Main extends React.Component {
               src={this.state.list[5]}
               alt={dante}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -118,7 +131,7 @@ class Main extends React.Component {
               src={this.state.list[6]}
               alt={kratos}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -126,7 +139,7 @@ class Main extends React.Component {
               src={this.state.list[7]}
               alt={link}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
         </div>
@@ -137,7 +150,7 @@ class Main extends React.Component {
               src={this.state.list[8]}
               alt={samus}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -145,7 +158,7 @@ class Main extends React.Component {
               src={this.state.list[9]}
               alt={drake}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -153,7 +166,7 @@ class Main extends React.Component {
               src={this.state.list[10]}
               alt={ryu}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
           <div className="col s3 m3 l3 center">
@@ -161,7 +174,7 @@ class Main extends React.Component {
               src={this.state.list[11]}
               alt={sonic}
               className="responsive-img"
-              onClick={this.shuffleArray}
+              onClick={this.gameController}
             />
           </div>
         </div>
