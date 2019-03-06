@@ -1,6 +1,6 @@
 # react-memory-game
 
-![Memory Game](https://giphy.com/gifs/4ZvvtLrcgC6kuBCaJO.gif)
+![Memory Game](https://media.giphy.com/media/4ZvvtLrcgC6kuBCaJO/giphy.gif)
 
 This game is a test of memory. All you have to do is click on each image. But remember **DRY** (...see what I did there?) Click on the same image twice, and you lose.
 
