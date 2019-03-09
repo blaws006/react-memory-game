@@ -2,7 +2,7 @@
 
 ![Memory Game](https://media.giphy.com/media/4ZvvtLrcgC6kuBCaJO/giphy.gif)
 
-This game is a test of memory. All you have to do is click on each image. But remember **DRY** (...see what I did there?) Click on the same image twice, and you lose.
+This game is a test of memory. All you have to do is click on each image. But remember **DRY** (...see what I did there?) Click on the same image twice, and you lose. Can you get the high score?
 
 ## Getting started
 
@@ -14,4 +14,8 @@ Fire up the server using `npm start`
 
 ## Technologies Used
 1. React.js using [Create React App](https://facebook.github.io/create-react-app/)
-1. Materialize
+1. Materialize CSS
+
+[Play the game and enjoy!](https://blaws006.github.io/react-memory-game/)
+
+##
