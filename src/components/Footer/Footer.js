@@ -8,7 +8,6 @@ function Footer() {
           <div className="col l6 s12">
             <h5 className="white-text">Memory Game</h5>
           </div>
-          
         </div>
       </div>
       <div className="footer-copyright">

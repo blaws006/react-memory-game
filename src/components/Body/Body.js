@@ -13,7 +13,7 @@ import ryu from "../img/Ryu_TvC.png";
 import sonic from "../img/sonic.jpg";
 import Header from "../Header/Header";
 import Banner from "../Banner/Banner";
-import Image from '../Image/Image'
+import Image from "../Image/Image";
 import Footer from "../Footer/Footer";
 
 // Create a list
@@ -23,7 +23,7 @@ import Footer from "../Footer/Footer";
 class Body extends React.Component {
   constructor(props) {
     super(props);
-    this.gameController = this.gameController.bind(this)
+    this.gameController = this.gameController.bind(this);
     this.state = {
       list: [
         { name: "Cloud Strife", url: cloud },
@@ -41,8 +41,7 @@ class Body extends React.Component {
       ],
       clickedList: [],
       currentScore: 0,
-      topScore: 0,
-      
+      topScore: 0
     };
   }
 
@@ -121,27 +120,50 @@ class Body extends React.Component {
 
   render() {
     // Made three rows worth of images .slice takes 4 images out of the array .map lays out the 4 picked
-    const rowOne = this.state.list.slice(0, 4).map(image =>
-      <Image key={image.name} name={image.name} url={image.url} alt={image.name} title={image.name} gameController={this.gameController} /> 
-      )
-    const rowTwo = this.state.list.slice(4, 8).map(image =>
-      <Image key={image.name} name={image.name} url={image.url} alt={image.name} title={image.name} gameController={this.gameController} /> 
-    )
-    const rowThree = this.state.list.slice(8, 12).map(image =>
-      <Image key={image.name} name={image.name} url={image.url} alt={image.name} title={image.name} gameController={this.gameController} /> 
-    )
+    const rowOne = this.state.list
+      .slice(0, 4)
+      .map(image => (
+        <Image
+          key={image.name}
+          name={image.name}
+          url={image.url}
+          alt={image.name}
+          title={image.name}
+          gameController={this.gameController}
+        />
+      ));
+    const rowTwo = this.state.list
+      .slice(4, 8)
+      .map(image => (
+        <Image
+          key={image.name}
+          name={image.name}
+          url={image.url}
+          alt={image.name}
+          title={image.name}
+          gameController={this.gameController}
+        />
+      ));
+    const rowThree = this.state.list
+      .slice(8, 12)
+      .map(image => (
+        <Image
+          key={image.name}
+          name={image.name}
+          url={image.url}
+          alt={image.name}
+          title={image.name}
+          gameController={this.gameController}
+        />
+      ));
     return (
       <div className="page-wrapper">
         <Header current={this.state.currentScore} high={this.state.topScore} />
         <Banner />
         <div className="container content">
           <div className="row">{rowOne}</div>
-          <div className="row">
-            {rowTwo}
-          </div>
-          <div className="row">
-            {rowThree}
-          </div>
+          <div className="row">{rowTwo}</div>
+          <div className="row">{rowThree}</div>
         </div>
         <Footer />
       </div>
